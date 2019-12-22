@@ -27,6 +27,7 @@ set encoding=utf-8 fileencodings=ucs-bom,utf-8,cp936,iso-8859-1
 set backspace=indent,eol,start
 set autochdir
 set scrolloff=5
+" set clipboard=unnamedplus
 
 au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
 
@@ -52,6 +53,8 @@ nnoremap gt :YcmCompleter GetType<CR>
 nnoremap gr :YcmCompleter GoToReferences<CR>
 
 Plugin 'theniceboy/vim-calc'
+
+" Plugin 'neoclide/coc.vim'
 
 Plugin 'iamcco/mathjax-support-for-mkdp'
 Plugin 'iamcco/markdown-preview.vim'
