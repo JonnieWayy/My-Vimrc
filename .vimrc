@@ -29,6 +29,9 @@ set autochdir
 set scrolloff=5
 " set clipboard=unnamedplus
 
+let g:pymode_python = 'python3'
+let g:pymode_rope = 0
+
 au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
 
 " 基于缩进或语法进行代码折叠
@@ -64,7 +67,7 @@ Plugin 'iamcco/markdown-preview.vim'
 " let g:mkdp_command_for_global = 0
 " let g:mkdp_open_to_the_world = 0
 " let g:mkdp_open_ip = ''
-" let g:mkdp_browser = 'firefox'
+" let g:mkdp_browser = 'falkon'
 " let g:mkdp_echo_preview_url = 0
 " let g:mkdp_browserfunc = ''
 " let g:mkdp_preview_options = {
@@ -111,7 +114,7 @@ let g:SignatureMap = {
         \ }
 
 Plugin 'junegunn/goyo.vim'
-map <LEADER>gy :Goyo<CR>
+nnoremap <LEADER>gy :Goyo<CR>
 
 Plugin 'luochen1990/rainbow'
 let g:rainbow_active = 1
@@ -142,7 +145,7 @@ Plugin 'mbbill/undotree'
 let g:undotree_DiffAutoOpen = 0
 set undodir=~/.undodir/
 set undofile
-map tt :UndotreeToggle<CR>
+nnoremap tt :UndotreeToggle<CR>
 
 Plugin 'scrooloose/nerdtree'
 let g:NERDTreeWinPos='left'
@@ -197,39 +200,45 @@ inoremap <C-u> <esc>gUiwea
 inoremap jk <esc>
 inoremap kj <esc>
 
-map s :w<CR>
-map S :wq<CR>
-map Q :q<CR>
+nnoremap s :w<CR>
+nnoremap S :wq<CR>
+nnoremap Q :q<CR>
 
-map sl :set splitright<CR>:vsplit<CR>
-map sh :set nosplitright<CR>:vsplit<CR>
-map sk :set nosplitbelow<CR>:split<CR>
-map sj :set splitbelow<CR>:split<CR>
+nnoremap sl :set splitright<CR>:vsplit<CR>
+nnoremap sh :set nosplitright<CR>:vsplit<CR>
+nnoremap sk :set nosplitbelow<CR>:split<CR>
+nnoremap sj :set splitbelow<CR>:split<CR>
 
-map <LEADER>l <C-w>l
-map <LEADER>k <C-w>k
-map <LEADER>j <C-w>j
-map <LEADER>h <C-w>h
+nnoremap <LEADER>l <C-w>l
+nnoremap <LEADER>k <C-w>k
+nnoremap <LEADER>j <C-w>j
+nnoremap <LEADER>h <C-w>h
 
-map <LEADER><up> :res -5<CR>
-map <LEADER><down> :res +5<CR>
-map <LEADER><left> :vertical resize+5<CR>
-map <LEADER><right> :vertical resize-5<CR>
+nnoremap <LEADER><up> :res -5<CR>
+nnoremap <LEADER><down> :res +5<CR>
+nnoremap <LEADER><left> :vertical resize+5<CR>
+nnoremap <LEADER><right> :vertical resize-5<CR>
 
-map <LEADER>nr :set norelativenumber<CR>
-map <LEADER>rr :set relativenumber<CR>
+nnoremap <LEADER>nr :set norelativenumber<CR>
+nnoremap <LEADER>rr :set relativenumber<CR>
 
-map tu :tabe<CR> 
-map tn :-tabnext<CR>
-map tm :+tabnext<CR>
+nnoremap tu :tabe<CR> 
+nnoremap tn :-tabnext<CR>
+nnoremap tm :+tabnext<CR>
 
-map <LEADER>sv <C-w>t<C-w>H
-map <LEADER>sh <C-w>t<C-w>K
+nnoremap <LEADER>sv <C-w>t<C-w>H
+nnoremap <LEADER>sh <C-w>t<C-w>K
 
-map <LEADER>fd /\(\<\w\+\>\)\_s*\l
-map <LEADER>sc :set spell!<CR>
+nnoremap <LEADER>fd /\(\<\w\+\>\)\_s*\l
+nnoremap <LEADER>sc :set spell!<CR>
 noremap <C-x> ea<C-x>s
 inoremap <C-x> <Esc>ea<C-x>s
 
 " map <LEADER><LEADER> <Esc>/<++><CR>:nohlsearch<CR>c4l
-map tx :r !figlet 
+noremap tx :r !figlet 
+
+nnoremap <LEADER>ga :!git add %<CR><CR>
+nnoremap <LEADER>gc :!git commit -m 
+nnoremap <LEADER>gp :!git push -u origin master<CR>
+
+inoremap <C-d> <Esc>dd
