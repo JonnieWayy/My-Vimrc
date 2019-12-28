@@ -174,6 +174,7 @@ set t_Co=256
 set encoding=utf-8
 set langmenu=zh_CN.UTF-8
 let g:airline_theme='badwolf'
+" let g:airline_theme='bubblegum'
 let g:airline_powerline_fonts = 1
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#buffer_nr_show = 1
