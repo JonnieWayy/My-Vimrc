@@ -1,6 +1,8 @@
 syntax on
 filetype off                  " required
 
+" set termguicolors
+
 set ts=4
 set expandtab
 set tabstop=4
@@ -22,7 +24,7 @@ set smartcase
 set hlsearch
 exec "nohlsearch"
 set incsearch
-" set showmatch
+set showmatch
 set encoding=utf-8 fileencodings=ucs-bom,utf-8,cp936,iso-8859-1
 set backspace=indent,eol,start
 set autochdir
@@ -42,8 +44,29 @@ set nofoldenable
 
 " set the runtime path to include Vundle and initialize
 set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
-Plugin 'VundleVim/YouCompleteMe'
+
+call plug#begin('~/.vim/plugged')
+" go 主要插件
+Plug 'fatih/vim-go', { 'tag': '*' }
+" go 中的代码追踪，输入 gd 就可以自动跳转
+Plug 'dgryski/vim-godef'
+
+" call vundle#begin()
+let g:go_fmt_command = "goimports" " 格式化将默认的 gofmt 替换
+let g:go_autodetect_gopath = 1
+let g:go_list_type = "quickfix"
+let g:go_version_warning = 1
+let g:go_highlight_types = 1
+let g:go_highlight_fields = 1
+let g:go_highlight_functions = 1
+let g:go_highlight_function_calls = 1
+let g:go_highlight_operators = 1
+let g:go_highlight_extra_types = 1
+let g:go_highlight_methods = 1
+let g:go_highlight_generate_tags = 1
+let g:godef_split=2
+
+Plug 'Valloric/YouCompleteMe', { 'do': './install.py' }
 let g:ycm_global_ycm_extra_conf='~/.ycm_extra_conf.py'
 let g:ycm_confirm_extra_conf = 0
 let g:ycm_complete_in_comments = 1
@@ -55,12 +78,12 @@ nnoremap g/ :YcmCompleter GetDoc<CR>
 nnoremap gt :YcmCompleter GetType<CR>
 nnoremap gr :YcmCompleter GoToReferences<CR>
 
-Plugin 'theniceboy/vim-calc'
+Plug 'theniceboy/vim-calc'
 
-" Plugin 'neoclide/coc.vim'
+" Plug 'neoclide/coc.vim'
 
-Plugin 'iamcco/mathjax-support-for-mkdp'
-Plugin 'iamcco/markdown-preview.vim'
+Plug 'iamcco/mathjax-support-for-mkdp'
+Plug 'iamcco/markdown-preview.vim'
 " let g:mkdp_auto_start = 0
 " let g:mkdp_auto_close = 1
 " let g:mkdp_refresh_slow = 0
@@ -88,7 +111,7 @@ imap <silent> <F8> <Plug>MarkdownPreview        " for insert mode
 nmap <silent> <F9> <Plug>StopMarkdownPreview    " for normal mode
 imap <silent> <F9> <Plug>StopMarkdownPreview    " for insert mode
 
-Plugin 'kshenoy/vim-signature'
+Plug 'kshenoy/vim-signature'
 let g:SignatureMap = {
         \ 'Leader'             :  "m",
         \ 'PlaceNextMark'      :  "m,",
@@ -113,10 +136,10 @@ let g:SignatureMap = {
         \ 'ListLocalMarkers'   :  "m?"
         \ }
 
-Plugin 'junegunn/goyo.vim'
+Plug 'junegunn/goyo.vim'
 nnoremap <LEADER>gy :Goyo<CR>
 
-Plugin 'luochen1990/rainbow'
+Plug 'luochen1990/rainbow'
 let g:rainbow_active = 1
 let g:rainbow_conf = {
 \   'guifgs': ['royalblue3', 'darkorange3', 'seagreen3', 'firebrick'],
@@ -141,20 +164,20 @@ let g:rainbow_conf = {
 \   }
 \}
 
-Plugin 'mbbill/undotree'
+Plug 'mbbill/undotree'
 let g:undotree_DiffAutoOpen = 0
 set undodir=~/.undodir/
 set undofile
 nnoremap tt :UndotreeToggle<CR>
 
-Plugin 'scrooloose/nerdtree'
+Plug 'scrooloose/nerdtree'
 let g:NERDTreeWinPos='left'
 let g:NERDTreeSize=30
 let g:NERDTreeShowLineNumbers=1
 let g:NERDTreeHidden=0
 map ff :NERDTreeToggle<CR>
-Plugin 'scrooloose/nerdcommenter'
-Plugin 'Xuyuanp/nerdtree-git-plugin'
+Plug 'scrooloose/nerdcommenter'
+Plug 'Xuyuanp/nerdtree-git-plugin'
 let g:NERDSpaceDelims=1
 let NERDTreeMapOpenExpl = ""
 let NERDTreeMapUpdir = ""
@@ -167,8 +190,8 @@ let NERDTreeMapPreview = ""
 let NERDTreeMapCloseDir = "n"
 let NERDTreeMapChangeRoot = "y"
 
-Plugin 'vim-airline/vim-airline'
-Plugin 'vim-airline/vim-airline-themes'
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
 set laststatus=2
 set t_Co=256
 set encoding=utf-8
@@ -182,8 +205,9 @@ let g:airline#extensions#whitespace#enabled = 0
 let g:airline#extensions#whitespace#symbol = '!'
 nnoremap <C-M> :bn<CR>
 nnoremap <C-N> :bp<CR>
-Plugin 'jiangmiao/auto-pairs'
-call vundle#end()            " required
+Plug 'jiangmiao/auto-pairs'
+call plug#end()
+
 filetype plugin indent on    " required
 
 let mapleader=" "
