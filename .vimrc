@@ -51,7 +51,6 @@ Plug 'fatih/vim-go', { 'tag': '*' }
 " go 中的代码追踪，输入 gd 就可以自动跳转
 Plug 'dgryski/vim-godef'
 
-" call vundle#begin()
 let g:go_fmt_command = "goimports" " 格式化将默认的 gofmt 替换
 let g:go_autodetect_gopath = 1
 let g:go_list_type = "quickfix"
@@ -267,3 +266,5 @@ nnoremap <LEADER>gc :!git commit -m
 nnoremap <LEADER>gp :!git push -u origin master<CR>
 
 inoremap <C-d> <Esc>dd
+
+nnoremap <LEADER>hd ggi"""<CR>@author:<SPACE>Jonathan<SPACE>Wang<CR>@coding:<SPACE>utf-8<CR>@environment:<SPACE>Manjaro<SPACE>18.1.5<SPACE>Juhraya<CR>@date:<Esc>o<CR><Esc>i"""<Esc>
