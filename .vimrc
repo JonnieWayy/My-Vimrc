@@ -211,9 +211,11 @@ filetype plugin indent on    " required
 
 let mapleader=" "
 
-nnoremap <F5>   <Esc>:w<CR>:!g++ -std=c++11 % -o /tmp/a.out && /tmp/a.out<CR>
-nnoremap <C-F5>   <Esc>:w<CR>:!/opt/anaconda/bin/python3 %<CR>
-nnoremap <F6> <Esc>:w<CR>:!g++ -std=c++11 -g % -o /tmp/a.out && gdb /tmp/a.out<CR>
+nnoremap <F5>   <Esc>:w<CR>:!/opt/anaconda/bin/python3 %<CR>
+nnoremap <C-F5>   <Esc>:w<CR>:!python3 %<CR>
+
+nnoremap <F6>   <Esc>:w<CR>:!g++ -std=c++11 % -o /tmp/a.out && /tmp/a.out<CR>
+nnoremap <C-F6> <Esc>:w<CR>:!g++ -std=c++11 -g % -o /tmp/a.out && gdb /tmp/a.out<CR>
 nnoremap <F7>   <Esc>:w<CR>:!g++ -std=c++11 %<CR>
 
 nnoremap <LEADER>m :call Calc()<CR>
