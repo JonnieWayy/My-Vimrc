@@ -81,15 +81,22 @@ Plug 'theniceboy/vim-calc'
 
 " Plug 'neoclide/coc.vim'
 
+Plug 'dhruvasagar/vim-table-mode'
+" Use this option to define the table corner character
+let g:table_mode_corner = '|'
+" Use this option to define the delimiter which used by
+let g:table_mode_delimiter = ' '
+
+
 Plug 'iamcco/mathjax-support-for-mkdp'
 Plug 'iamcco/markdown-preview.vim'
+let g:mkdp_path_to_chrome = "qutebrowser"
 " let g:mkdp_auto_start = 0
 " let g:mkdp_auto_close = 1
 " let g:mkdp_refresh_slow = 0
 " let g:mkdp_command_for_global = 0
 " let g:mkdp_open_to_the_world = 0
 " let g:mkdp_open_ip = ''
-" let g:mkdp_browser = 'falkon'
 " let g:mkdp_echo_preview_url = 0
 " let g:mkdp_browserfunc = ''
 " let g:mkdp_preview_options = {
