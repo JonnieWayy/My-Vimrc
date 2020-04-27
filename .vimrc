@@ -212,6 +212,19 @@ let g:airline#extensions#whitespace#symbol = '!'
 nnoremap <C-M> :bn<CR>
 nnoremap <C-N> :bp<CR>
 Plug 'jiangmiao/auto-pairs'
+
+" Plug 'lervag/vimtex'
+" let g:tex_flavor='latex'
+" let g:vimtex_view_method='zathura'
+" let g:vimtex_quickfix_mode=0
+" set conceallevel=1
+" let g:tex_conceal='abdmg'
+
+" Plug 'sirver/ultisnips'
+" let g:UltiSnipsExpandTrigger = '<tab>'
+" let g:UltiSnipsJumpForwardTrigger = '<tab>'
+" let g:UltiSnipsJumpBackwardTrigger = '<s-tab>'
+
 call plug#end()
 
 filetype plugin indent on    " required
@@ -237,10 +250,10 @@ nnoremap s :w<CR>
 nnoremap S :wq<CR>
 nnoremap Q :q<CR>
 
-nnoremap sl :set splitright<CR>:vsplit<CR>
-nnoremap sh :set nosplitright<CR>:vsplit<CR>
-nnoremap sk :set nosplitbelow<CR>:split<CR>
-nnoremap sj :set splitbelow<CR>:split<CR>
+nnoremap <LEADER>sl :set splitright<CR>:vsplit<CR>
+nnoremap <LEADER>sh :set nosplitright<CR>:vsplit<CR>
+nnoremap <LEADER>sk :set nosplitbelow<CR>:split<CR>
+nnoremap <LEADER>sj :set splitbelow<CR>:split<CR>
 
 nnoremap <LEADER>l <C-w>l
 nnoremap <LEADER>k <C-w>k
@@ -262,10 +275,14 @@ nnoremap tm :+tabnext<CR>
 nnoremap <LEADER>sv <C-w>t<C-w>H
 nnoremap <LEADER>sh <C-w>t<C-w>K
 
+nnoremap <C-h> i**<Esc>
+inoremap <C-h> **
+
 nnoremap <LEADER>fd /\(\<\w\+\>\)\_s*\l
 nnoremap <LEADER>sc :set spell!<CR>
 noremap <C-x> ea<C-x>s
 inoremap <C-x> <Esc>ea<C-x>s
+inoremap <C-l> \\(\\)<Esc>hhha
 
 " map <LEADER><LEADER> <Esc>/<++><CR>:nohlsearch<CR>c4l
 noremap tx :r !figlet 
@@ -277,3 +294,5 @@ nnoremap <LEADER>gp :!git push -u origin master<CR>
 inoremap <C-d> <Esc>dd
 
 nnoremap <LEADER>hd ggi"""<CR>@author:<SPACE>Jonathan<SPACE>Wang<CR>@coding:<SPACE>utf-8<CR>@environment:<SPACE>Manjaro<SPACE>18.1.5<SPACE>Juhraya<CR>@date:<Esc>o<CR><Esc>i"""<Esc>
+
+nnoremap <LEADER>ct ocategories:<CR>tags:<Esc>
