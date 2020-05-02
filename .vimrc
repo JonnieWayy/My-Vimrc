@@ -4,6 +4,7 @@ filetype off                  " required
 " set termguicolors
 
 set ts=4
+set visualbell
 set expandtab
 set tabstop=4
 set shiftwidth=4
@@ -16,6 +17,7 @@ set tabstop=4
 set showmatch
 set number
 set relativenumber
+set linebreak
 set wrap
 set showcmd
 set wildmenu
@@ -241,6 +243,8 @@ nnoremap <F7>   <Esc>:w<CR>:!g++ -std=c++11 %<CR>
 nnoremap <LEADER>m :call Calc()<CR>
 
 nnoremap <LEADER><CR> :nohlsearch<CR>
+
+inoremap <C-a> <esc>la
 
 inoremap <C-u> <esc>gUiwea
 inoremap jk <esc>
