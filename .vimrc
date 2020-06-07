@@ -48,6 +48,11 @@ set nofoldenable
 set rtp+=~/.vim/bundle/Vundle.vim
 
 call plug#begin('~/.vim/plugged')
+
+Plug 'octol/vim-cpp-enhanced-highlight', {'for': ['c', 'cpp', 'h']}
+
+Plug 'ajmwagar/vim-deus'
+
 " go 主要插件
 Plug 'fatih/vim-go', { 'tag': '*' }
 " go 中的代码追踪，输入 gd 就可以自动跳转
@@ -213,6 +218,7 @@ let g:airline#extensions#whitespace#enabled = 0
 let g:airline#extensions#whitespace#symbol = '!'
 nnoremap <C-M> :bn<CR>
 nnoremap <C-N> :bp<CR>
+
 Plug 'jiangmiao/auto-pairs'
 
 " Plug 'lervag/vimtex'
