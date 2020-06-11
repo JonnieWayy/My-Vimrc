@@ -52,6 +52,13 @@ call plug#begin('~/.vim/plugged')
 Plug 'octol/vim-cpp-enhanced-highlight', {'for': ['c', 'cpp', 'h']}
 
 Plug 'ajmwagar/vim-deus'
+" set t_Co=256
+" set termguicolors
+" let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
+" let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
+" set background=dark    " Setting dark mode
+" colorscheme deus
+" let g:deus_termcolors=256
 
 " go 主要插件
 Plug 'fatih/vim-go', { 'tag': '*' }
