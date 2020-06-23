@@ -275,6 +275,8 @@ nnoremap <F7>   <Esc>:w<CR>:!g++ -std=c++11 %<CR>
 
 nnoremap <LEADER>fr :!flutter<SPACE>run<CR>
 nnoremap <LEADER>fp :!flutter<SPACE>packages<SPACE>get<CR>
+nnoremap <LEADER>fe8 :!flutter<SPACE>emulators<SPACE>--launch<SPACE>Nexus_6_API_27<CR><CR>
+nnoremap <LEADER>fe1 :!flutter<SPACE>emulators<SPACE>--launch<SPACE>Nexus_6P_API_30<CR><CR>
 
 nnoremap <LEADER>m :call Calc()<CR>
 
@@ -329,6 +331,7 @@ noremap tx :r !figlet
 
 nnoremap <LEADER>ga :!git add %<CR><CR>
 nnoremap <LEADER>gc :!git commit -m 
+nnoremap <LEADER>gu :!git commit -m "Update"<CR><CR>
 nnoremap <LEADER>gp :!git push -u origin master<CR>
 
 inoremap <C-d> <Esc>dd
