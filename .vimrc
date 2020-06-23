@@ -38,6 +38,7 @@ let g:pymode_rope = 0
 
 au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
 
+
 " 基于缩进或语法进行代码折叠
 set foldmethod=indent
 " set foldmethod=syntax
@@ -49,6 +50,16 @@ set rtp+=~/.vim/bundle/Vundle.vim
 
 call plug#begin('~/.vim/plugged')
 
+Plug 'dart-lang/dart-vim-plugin'
+Plug 'thosakwe/vim-flutter'
+
+Plug 'tpope/vim-surround'
+
+Plug 'dart-lang/dart-vim-plugin'
+Plug 'natebosch/vim-lsc'
+Plug 'natebosch/vim-lsc-dart'
+autocmd BufWritePre *.dart* DartFmt
+
 Plug 'octol/vim-cpp-enhanced-highlight', {'for': ['c', 'cpp', 'h']}
 
 Plug 'ajmwagar/vim-deus'
@@ -57,7 +68,6 @@ Plug 'ajmwagar/vim-deus'
 " let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
 " let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
 " set background=dark    " Setting dark mode
-" colorscheme deus
 " let g:deus_termcolors=256
 
 " go 主要插件
@@ -79,21 +89,22 @@ let g:go_highlight_methods = 1
 let g:go_highlight_generate_tags = 1
 let g:godef_split=2
 
-Plug 'Valloric/YouCompleteMe', { 'do': './install.py' }
-let g:ycm_global_ycm_extra_conf='~/.ycm_extra_conf.py'
-let g:ycm_confirm_extra_conf = 0
-let g:ycm_complete_in_comments = 1
-let g:ycm_complete_in_strings = 1
-let g:ycm_enable_diagnostic_signs = 0
-let g:ycm_enable_diagnostic_highlighting = 0
-nnoremap gd :YcmCompleter GoToDefinitionElseDeclaration<CR>
-nnoremap g/ :YcmCompleter GetDoc<CR>
-nnoremap gt :YcmCompleter GetType<CR>
-nnoremap gr :YcmCompleter GoToReferences<CR>
+" Plug 'Valloric/YouCompleteMe', { 'do': './install.py' }
+" let g:ycm_global_ycm_extra_conf='~/.ycm_extra_conf.py'
+" let g:ycm_python_binary_path = '/usr/bin/python'
+" let g:ycm_confirm_extra_conf = 0
+" let g:ycm_complete_in_comments = 1
+" let g:ycm_complete_in_strings = 1
+" let g:ycm_enable_diagnostic_signs = 0
+" let g:ycm_enable_diagnostic_highlighting = 0
+" nnoremap gd :YcmCompleter GoToDefinitionElseDeclaration<CR>
+" nnoremap g/ :YcmCompleter GetDoc<CR>
+" nnoremap gt :YcmCompleter GetType<CR>
+" nnoremap gr :YcmCompleter GoToReferences<CR>
 
 Plug 'theniceboy/vim-calc'
 
-" Plug 'neoclide/coc.vim'
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
 Plug 'dhruvasagar/vim-table-mode'
 " Use this option to define the table corner character
@@ -210,14 +221,18 @@ let NERDTreeMapPreview = ""
 let NERDTreeMapCloseDir = "n"
 let NERDTreeMapChangeRoot = "y"
 
+" Plug 'dracula/vim', { 'as': 'dracula' }
+Plug 'crusoexia/vim-dracula'
+let g:dracula_italic = 1
+
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 set laststatus=2
 set t_Co=256
 set encoding=utf-8
 set langmenu=zh_CN.UTF-8
-let g:airline_theme='badwolf'
-" let g:airline_theme='bubblegum'
+" let g:airline_theme='badwolf'
+let g:airline_theme='bubblegum'
 let g:airline_powerline_fonts = 1
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#buffer_nr_show = 1
@@ -227,6 +242,8 @@ nnoremap <C-M> :bn<CR>
 nnoremap <C-N> :bp<CR>
 
 Plug 'jiangmiao/auto-pairs'
+
+Plug 'mattn/emmet-vim'
 
 " Plug 'lervag/vimtex'
 " let g:tex_flavor='latex'
@@ -243,6 +260,9 @@ Plug 'jiangmiao/auto-pairs'
 call plug#end()
 
 filetype plugin indent on    " required
+
+colorscheme dracula
+" colorscheme deus
 
 let mapleader=" "
 
