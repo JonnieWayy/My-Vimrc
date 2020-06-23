@@ -273,8 +273,8 @@ nnoremap <F6>   <Esc>:w<CR>:!g++ -std=c++11 % -o /tmp/a.out && /tmp/a.out<CR>
 nnoremap <C-F6> <Esc>:w<CR>:!g++ -std=c++11 -g % -o /tmp/a.out && gdb /tmp/a.out<CR>
 nnoremap <F7>   <Esc>:w<CR>:!g++ -std=c++11 %<CR>
 
-nnoremap <LEADER>fr<SPACE>:!flutter<SPACE>run<CR>
-nnoremap <LEADER>fr<SPACE>:!flutter<SPACE>packages<SPACE>get<CR>
+nnoremap <LEADER>fr :!flutter<SPACE>run<CR>
+nnoremap <LEADER>fp :!flutter<SPACE>packages<SPACE>get<CR>
 
 nnoremap <LEADER>m :call Calc()<CR>
 
