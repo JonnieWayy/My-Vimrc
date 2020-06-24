@@ -31,10 +31,8 @@ set encoding=utf-8 fileencodings=ucs-bom,utf-8,cp936,iso-8859-1
 set backspace=indent,eol,start
 set autochdir
 set scrolloff=5
+set guifont=DroidSansMono\ Nerd\ Font\ 11
 " set clipboard=unnamedplus
-
-let g:pymode_python = 'python3'
-let g:pymode_rope = 0
 
 au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
 
@@ -233,6 +231,7 @@ set encoding=utf-8
 set langmenu=zh_CN.UTF-8
 " let g:airline_theme='badwolf'
 let g:airline_theme='bubblegum'
+set background=dark
 let g:airline_powerline_fonts = 1
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#buffer_nr_show = 1
@@ -245,9 +244,22 @@ Plug 'jiangmiao/auto-pairs'
 
 Plug 'mattn/emmet-vim'
 
+Plug 'ryanoasis/vim-devicons'
+
+" Plug 'SirVer/ultisnips'
+" let g:UltiSnipsExpandTrigger = '<tab>'
+" let g:UltiSnipsJumpForwardTrigger = '<tab>'
+" let g:UltiSnipsJumpBackwardTrigger = '<s-tab>'
+" Plug 'honza/vim-snippets'
+" Plug 'KeitaNakamura/tex-conceal.vim'
+" set conceallevel=1
+" let g:tex_conceal='abdmg'
+" hi Conceal ctermbg=none
+
 " Plug 'lervag/vimtex'
 " let g:tex_flavor='latex'
-" let g:vimtex_view_method='zathura'
+" let g:vimtex_view_method='okular'
+" let g:tex_indent_items=0
 " let g:vimtex_quickfix_mode=0
 " set conceallevel=1
 " let g:tex_conceal='abdmg'
@@ -317,6 +329,8 @@ nnoremap tm :+tabnext<CR>
 nnoremap <LEADER>sv <C-w>t<C-w>H
 nnoremap <LEADER>sh <C-w>t<C-w>K
 
+nnoremap <LEADER>sv :source %<CR>
+
 nnoremap <C-h> i**<Esc>
 inoremap <C-h> **
 
@@ -334,7 +348,7 @@ nnoremap <LEADER>gc :!git commit -m
 nnoremap <LEADER>gu :!git commit -m "Update"<CR><CR>
 nnoremap <LEADER>gp :!git push -u origin master<CR>
 
-inoremap <C-d> <Esc>dd
+inoremap <C-d> <Esc>ddO<Esc>
 
 nnoremap <LEADER>hd ggi"""<CR>@author:<SPACE>Jonathan<SPACE>Wang<CR>@coding:<SPACE>utf-8<CR>@environment:<SPACE>Manjaro<SPACE>18.1.5<SPACE>Juhraya<CR>@date:<Esc>o<CR><Esc>i"""<Esc>
 
