@@ -1,7 +1,7 @@
 syntax on
 filetype off                  " required
 
-" set termguicolors
+" set termguicolor
 
 set ts=4
 set visualbell
@@ -30,12 +30,14 @@ set showmatch
 set encoding=utf-8 fileencodings=ucs-bom,utf-8,cp936,iso-8859-1
 set backspace=indent,eol,start
 set autochdir
+set nobackup
 set scrolloff=5
 set guifont=DroidSansMono\ Nerd\ Font\ 11
 " set clipboard=unnamedplus
 
 au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
 
+autocmd BufNewFile,BufRead *.tex set spell
 
 " 基于缩进或语法进行代码折叠
 set foldmethod=indent
@@ -44,7 +46,7 @@ set foldmethod=indent
 set nofoldenable
 
 " set the runtime path to include Vundle and initialize
-set rtp+=~/.vim/bundle/Vundle.vim
+" set rtp+=~/.vim/bundle/Vundle.vim
 
 call plug#begin('~/.vim/plugged')
 
@@ -60,7 +62,7 @@ autocmd BufWritePre *.dart* DartFmt
 
 Plug 'octol/vim-cpp-enhanced-highlight', {'for': ['c', 'cpp', 'h']}
 
-Plug 'ajmwagar/vim-deus'
+" Plug 'ajmwagar/vim-deus'
 " set t_Co=256
 " set termguicolors
 " let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
@@ -286,6 +288,17 @@ let g:NERDTreeWinPos='left'
 let g:NERDTreeSize=30
 let g:NERDTreeShowLineNumbers=1
 let g:NERDTreeHidden=0
+let g:NERDTreeIndicatorMapCustom = {
+    \ "Modified"  : "✹",
+    \ "Staged"    : "✚",
+    \ "Untracked" : "✭",
+    \ "Renamed"   : "➜",
+    \ "Unmerged"  : "═",
+    \ "Deleted"   : "✖",
+    \ "Dirty"     : "✗",
+    \ "Clean"     : "✔︎",
+    \ "Unknown"   : "?"
+    \ }
 map ff :NERDTreeToggle<CR>
 Plug 'scrooloose/nerdcommenter'
 Plug 'Xuyuanp/nerdtree-git-plugin'
@@ -338,13 +351,13 @@ Plug 'ryanoasis/vim-devicons'
 " let g:tex_conceal='abdmg'
 " hi Conceal ctermbg=none
 
-" Plug 'lervag/vimtex'
-" let g:tex_flavor='latex'
-" let g:vimtex_view_method='okular'
-" let g:tex_indent_items=0
-" let g:vimtex_quickfix_mode=0
-" set conceallevel=1
-" let g:tex_conceal='abdmg'
+Plug 'lervag/vimtex'
+let g:tex_flavor='latex'
+let g:vimtex_view_method='okular'
+let g:tex_indent_items=0
+let g:vimtex_quickfix_mode=0
+set conceallevel=1
+let g:tex_conceal='abdmg'
 
 " Plug 'sirver/ultisnips'
 " let g:UltiSnipsExpandTrigger = '<tab>'
@@ -411,7 +424,7 @@ nnoremap tm :+tabnext<CR>
 nnoremap <LEADER>sv <C-w>t<C-w>H
 nnoremap <LEADER>sh <C-w>t<C-w>K
 
-nnoremap <LEADER>sv :source %<CR>
+nnoremap <LEADER>se :source %<CR>
 
 nnoremap <C-h> i**<Esc>
 inoremap <C-h> **
