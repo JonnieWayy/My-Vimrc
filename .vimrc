@@ -335,6 +335,8 @@ let g:airline#extensions#whitespace#symbol = '!'
 nnoremap <C-M> :bn<CR>
 nnoremap <C-N> :bp<CR>
 
+Plug 'lpinilla/vim-codepainter'
+
 Plug 'jiangmiao/auto-pairs'
 
 Plug 'mattn/emmet-vim'
@@ -364,12 +366,16 @@ let g:tex_conceal='abdmg'
 " let g:UltiSnipsJumpForwardTrigger = '<tab>'
 " let g:UltiSnipsJumpBackwardTrigger = '<s-tab>'
 
+Plug 'Yggdroot/indentLine'
+" let g:indentLine_setColors = 0
+let g:indentLine_char = '┊'
+" let g:indentLine_char_list = ['|', '¦', '┆', '┊']
+
 call plug#end()
 
-filetype plugin indent on    " required
+filetype plugin indent on    " require
 
 colorscheme dracula
-" colorscheme deus
 
 let mapleader=" "
 
