@@ -11,9 +11,11 @@ set shiftwidth=4
 set nocompatible              " be iMproved, required
 set mouse=a
 set cursorline
+set cursorcolumn
 set autoindent
 set ruler
 set tabstop=4
+set softtabstop=4
 set showmatch
 set number
 set relativenumber
@@ -34,6 +36,9 @@ set nobackup
 set scrolloff=5
 set guifont=DroidSansMono\ Nerd\ Font\ 11
 " set clipboard=unnamedplus
+
+" set guioptions-=m
+" set guioptions-=T
 
 au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
 
