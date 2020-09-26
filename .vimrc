@@ -55,6 +55,13 @@ set nofoldenable
 
 call plug#begin('~/.vim/plugged')
 
+Plug 'JonnieWayy/token-toggle'
+nnoremap <LEADER>p :TokenToggle<CR>
+
+Plug 'Yggdroot/LeaderF', { 'do': './install.sh' }
+
+Plug 'junegunn/limelight.vim'
+
 Plug 'dart-lang/dart-vim-plugin'
 Plug 'thosakwe/vim-flutter'
 
@@ -180,8 +187,8 @@ autocmd CursorHold * silent call CocActionAsync('highlight')
 nmap <leader>rn <Plug>(coc-rename)
 
 " Formatting selected code.
-xmap <leader>f  <Plug>(coc-format-selected)
-nmap <leader>f  <Plug>(coc-format-selected)
+xmap <leader>c  <Plug>(coc-format-selected)
+nmap <leader>c  <Plug>(coc-format-selected)
 
 augroup mygroup
   autocmd!
@@ -293,7 +300,7 @@ let g:NERDTreeWinPos='left'
 let g:NERDTreeSize=30
 let g:NERDTreeShowLineNumbers=1
 let g:NERDTreeHidden=0
-let g:NERDTreeIndicatorMapCustom = {
+let g:NERDTreeGitStatusIndicatorMapCustom = {
     \ "Modified"  : "✹",
     \ "Staged"    : "✚",
     \ "Untracked" : "✭",
