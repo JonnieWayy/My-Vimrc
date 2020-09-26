@@ -1,8 +1,6 @@
 syntax on
 filetype off                  " required
-
 " set termguicolor
-
 set ts=4
 set visualbell
 set expandtab
@@ -36,22 +34,16 @@ set nobackup
 set scrolloff=5
 set guifont=DroidSansMono\ Nerd\ Font\ 11
 " set clipboard=unnamedplus
-
 " set guioptions-=m
 " set guioptions-=T
-
 au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
-
 autocmd BufNewFile,BufRead *.tex set spell
-
 " 基于缩进或语法进行代码折叠
 set foldmethod=indent
 " set foldmethod=syntax
 " 启动 vim 时关闭折叠代码, za改变当前，zM关闭所有，zR打开所有
 set nofoldenable
-
-" set the runtime path to include Vundle and initialize
-" set rtp+=~/.vim/bundle/Vundle.vim
+let mapleader=" "
 
 call plug#begin('~/.vim/plugged')
 
@@ -86,7 +78,6 @@ Plug 'octol/vim-cpp-enhanced-highlight', {'for': ['c', 'cpp', 'h']}
 Plug 'fatih/vim-go', { 'tag': '*' }
 " go 中的代码追踪，输入 gd 就可以自动跳转
 Plug 'dgryski/vim-godef'
-
 let g:go_fmt_command = "goimports" " 格式化将默认的 gofmt 替换
 let g:go_autodetect_gopath = 1
 let g:go_list_type = "quickfix"
@@ -100,19 +91,6 @@ let g:go_highlight_extra_types = 1
 let g:go_highlight_methods = 1
 let g:go_highlight_generate_tags = 1
 let g:godef_split=2
-
-" Plug 'Valloric/YouCompleteMe', { 'do': './install.py' }
-" let g:ycm_global_ycm_extra_conf='~/.ycm_extra_conf.py'
-" let g:ycm_python_binary_path = '/usr/bin/python'
-" let g:ycm_confirm_extra_conf = 0
-" let g:ycm_complete_in_comments = 1
-" let g:ycm_complete_in_strings = 1
-" let g:ycm_enable_diagnostic_signs = 0
-" let g:ycm_enable_diagnostic_highlighting = 0
-" nnoremap gd :YcmCompleter GoToDefinitionElseDeclaration<CR>
-" nnoremap g/ :YcmCompleter GetDoc<CR>
-" nnoremap gt :YcmCompleter GetType<CR>
-" nnoremap gr :YcmCompleter GoToReferences<CR>
 
 Plug 'theniceboy/vim-calc'
 
@@ -326,7 +304,6 @@ let NERDTreeMapPreview = ""
 let NERDTreeMapCloseDir = "n"
 let NERDTreeMapChangeRoot = "y"
 
-" Plug 'dracula/vim', { 'as': 'dracula' }
 Plug 'crusoexia/vim-dracula'
 let g:dracula_italic = 1
 
@@ -388,8 +365,6 @@ call plug#end()
 filetype plugin indent on    " require
 
 colorscheme dracula
-
-let mapleader=" "
 
 nnoremap <F5>   <Esc>:w<CR>:!/opt/anaconda/bin/python3 %<CR>
 nnoremap <C-F5>   <Esc>:w<CR>:!python3 %<CR>
