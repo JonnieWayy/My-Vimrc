@@ -187,7 +187,8 @@ let g:table_mode_delimiter = ' '
 
 Plug 'iamcco/mathjax-support-for-mkdp'
 Plug 'iamcco/markdown-preview.vim'
-let g:mkdp_path_to_chrome = "qutebrowser"
+let g:mkdp_path_to_chrome = "firefox"
+" let g:mkdp_path_to_chrome = "qutebrowser"
 " let g:mkdp_auto_start = 0
 " let g:mkdp_auto_close = 1
 " let g:mkdp_refresh_slow = 0
