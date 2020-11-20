@@ -343,13 +343,13 @@ Plug 'ryanoasis/vim-devicons'
 " let g:tex_conceal='abdmg'
 " hi Conceal ctermbg=none
 
-Plug 'lervag/vimtex'
-let g:tex_flavor='latex'
-let g:vimtex_view_method='okular'
-let g:tex_indent_items=0
-let g:vimtex_quickfix_mode=0
-set conceallevel=1
-let g:tex_conceal='abdmg'
+" Plug 'lervag/vimtex'
+" let g:tex_flavor='latex'
+" let g:vimtex_view_method='okular'
+" let g:tex_indent_items=0
+" let g:vimtex_quickfix_mode=0
+" set conceallevel=1
+" let g:tex_conceal='abdmg'
 
 " Plug 'sirver/ultisnips'
 " let g:UltiSnipsExpandTrigger = '<tab>'
