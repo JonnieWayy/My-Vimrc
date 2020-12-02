@@ -356,6 +356,9 @@ Plug 'ryanoasis/vim-devicons'
 " let g:UltiSnipsJumpForwardTrigger = '<tab>'
 " let g:UltiSnipsJumpBackwardTrigger = '<s-tab>'
 
+Plug 'matze/vim-move'
+let g:move_key_modifier = 'C'
+
 Plug 'Yggdroot/indentLine'
 " let g:indentLine_setColors = 0
 let g:indentLine_char = '┊'
@@ -421,7 +424,6 @@ nnoremap <LEADER>sh <C-w>t<C-w>K
 nnoremap <LEADER>se :source %<CR>
 
 nnoremap <C-h> i**<Esc>
-inoremap <C-h> **
 
 nnoremap <LEADER>fd /\(\<\w\+\>\)\_s*\l
 nnoremap <LEADER>sc :set spell!<CR>
