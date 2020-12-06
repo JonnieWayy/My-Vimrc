@@ -423,7 +423,7 @@ nnoremap <LEADER>sh <C-w>t<C-w>K
 
 nnoremap <LEADER>se :source %<CR>
 
-nnoremap <C-h> i**<Esc>
+nnoremap <LEADER>h i**<Esc>
 
 nnoremap <LEADER>fd /\(\<\w\+\>\)\_s*\l
 nnoremap <LEADER>sc :set spell!<CR>
