@@ -369,6 +369,7 @@ call plug#end()
 filetype plugin indent on    " require
 
 colorscheme dracula
+hi Normal ctermfg=252 ctermbg=none
 
 nnoremap <F5>   <Esc>:w<CR>:!/opt/anaconda/bin/python3 %<CR>
 nnoremap <C-F5>   <Esc>:w<CR>:!python3 %<CR>
@@ -423,7 +424,7 @@ nnoremap <LEADER>sh <C-w>t<C-w>K
 
 nnoremap <LEADER>se :source %<CR>
 
-nnoremap <LEADER>h i**<Esc>
+" nnoremap <LEADER>h i**<Esc>
 
 nnoremap <LEADER>fd /\(\<\w\+\>\)\_s*\l
 nnoremap <LEADER>sc :set spell!<CR>
