@@ -47,8 +47,8 @@ let mapleader=" "
 
 call plug#begin('~/.vim/plugged')
 
-Plug 'JonnieWayy/token-toggle'
-nnoremap <LEADER>p :TokenToggle<CR>
+" Plug 'JonnieWayy/token-toggle'
+" nnoremap <LEADER>p :TokenToggle<CR>
 
 Plug 'Yggdroot/LeaderF', { 'do': './install.sh' }
 
@@ -364,11 +364,19 @@ Plug 'Yggdroot/indentLine'
 let g:indentLine_char = '┊'
 " let g:indentLine_char_list = ['|', '¦', '┆', '┊']
 
+Plug 'patstockwell/vim-monokai-tasty'
+
 call plug#end()
 
 filetype plugin indent on    " require
 
 colorscheme dracula
+" let g:vim_monokai_tasty_italic = 1
+" colorscheme vim-monokai-tasty
+
+" Optional themes for airline/lightline
+" let g:airline_theme='monokai_tasty'                   " airline theme
+" let g:lightline = { 'colorscheme': 'monokai_tasty' }  " lightline theme
 
 hi Normal ctermfg=255 ctermbg=none
 
